@@ -3,12 +3,31 @@
 <h1>Ideas</h1>
 
 <div id="ideas">
-  <% @ideas.each do |idea| %>
-    <%= render idea %>
-    <p>
-      <%= link_to "Show this idea", idea %>
-    </p>
-  <% end %>
+  <table class = "table">    
+    <tr>
+      <th>id</th>
+      <th>name</th>
+      <th>comments</th>
+      <th>created_at</th>
+    </tr> 
+
+    <% @ideas.each do |idea| %>
+      <tr>
+        <td>
+          <%= idea.id %>
+        </td>
+        <td>
+          <%= link_to idea.name, idea %>
+        </td>
+        <td>
+          <%= idea.comments.length %>
+        </td>
+        <td>
+          <%= idea.created_at %>
+        </td>
+      </tr>
+    <% end %>
+  </table>
 </div>
 
 <%= link_to "New idea", new_idea_path %>

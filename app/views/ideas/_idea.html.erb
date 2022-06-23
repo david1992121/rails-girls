@@ -13,5 +13,21 @@
     <strong>Picture:</strong>
     <%= image_tag(idea.picture_url, width: 600) if idea.picture.present? %>
   </p>
+  
+  <h4>Comments</h4>
 
+  <div class="py-3">
+    <% if @comments.count > 0 %>
+      <%= render @comments %>
+    <% else %>
+      No comments
+    <% end %>
+  </div>
+
+  <div class="py-3">
+    <h2>
+      Add a comment: 
+    </h2>
+    <%= render 'comments/form', comment: @comment %>
+  </div>
 </div>
