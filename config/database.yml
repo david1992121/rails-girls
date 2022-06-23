@@ -23,5 +23,5 @@ test:
 production:
   adapter: postgresql
   encoding: unicode
-  database: railsgirls_production
+  database: postgresql-animate-45388
   pool: 5
